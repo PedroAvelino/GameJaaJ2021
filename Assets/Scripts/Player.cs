@@ -22,6 +22,14 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if( Input.GetKeyDown(KeyCode.Z))
+        {
+            _dot.TryDash();
+        }
+    }
+
     private void FixedUpdate()
     {
         _dot.Move( GetMoveVector() );
