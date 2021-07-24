@@ -1,17 +1,35 @@
+using System;
+using MyBox;
 using UnityEngine;
 
 public class RulesManager : MonoBehaviour
 {
+    [SerializeField] [ReadOnly] [DisplayInspector] Rule _currentRule;
 
-    const string RULES_PATH = "Rules";
-    [SerializeField] Rule _currentRule;
+    public static Action<Rule> OnNewRuleGiven;
 
-    void LoadRules()
+    [ContextMenu("GetNewRule")]
+    public void GetNewRule()
     {
+        Rule newRule = RulesLoader.GetRandomRule();
 
+        if( newRule == null ) return;
+
+        _currentRule = newRule;
+
+        OnNewRuleGiven?.Invoke( _currentRule );
     }
-    Rule GetRandomRule()
+
+    private void Update()
     {
-        return new Rule_Destroy();
+        if( _currentRule != null)
+        {
+           CheckIfConditionIsMet();
+        }
+    }
+
+    private void CheckIfConditionIsMet()
+    {
+        
     }
 }
