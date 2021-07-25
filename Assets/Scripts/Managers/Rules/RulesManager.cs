@@ -12,20 +12,8 @@ public class RulesManager : MonoBehaviour
 
     private void OnEnable()
     {
-        Enemy.OnEnemyDeath += ManageEnemyDeath;
+        RuleTypeBase.OnRuleCompleted += GetNewRule;
     }
-
-    private void ManageEnemyDeath( Enemy enemy )
-    {
-        if( _currentRule == null ) return;
-
-
-        if(_currentRule.TargetEnemy == enemy.Type || _currentRule.TargetEnemy == EnemyType.Any )
-        {
-            //Deacrease the counter
-        }
-    }
-
 
     [ContextMenu("GetNewRule")]
     public void GetNewRule()
@@ -41,11 +29,6 @@ public class RulesManager : MonoBehaviour
 
     private void OnDisable()
     {
-        Enemy.OnEnemyDeath -= ManageEnemyDeath;
-    }
-
-    private void CheckIfConditionIsMet()
-    {
-        
+        RuleTypeBase.OnRuleCompleted -= GetNewRule;
     }
 }

@@ -1,13 +1,23 @@
 using MyBox;
 using UnityEngine;
 
+//Deals with rules of the type destroy
 public class DestroyRuleManager : RuleTypeBase
 {
 
     [Separator("Current Rules Data")]
-    [ReadOnly] public float TimeLeft = -1;
-    [ReadOnly] public int AmountOfEnemiesToDestroy;
-    [ReadOnly] public EnemyType TargetEnemy;
+    
+    [ReadOnly] 
+    public float TimeLeft = -1;
+    
+    [SerializeField] [ReadOnly] 
+    bool _isTimed;
+    
+    [ReadOnly] 
+    public int AmountOfEnemiesToDestroy;
+    
+    [ReadOnly] 
+    public EnemyType TargetEnemy;
 
     protected override void GetRuleData(Rule rule)
     {
@@ -15,11 +25,22 @@ public class DestroyRuleManager : RuleTypeBase
 
         if( myRule.IsTimed )
         {
+            _isTimed = true;
             TimeLeft = myRule.RuleTime;
         }
 
         TargetEnemy = myRule.TargetEnemy;
         AmountOfEnemiesToDestroy = myRule.AmountOfEnemiesToDestroy;
+    }
+
+    protected override void StartRule()
+    {
+        if (IsActive == false) return;
+        
+        if(_isTimed)
+        {
+            StartCoroutine( StartTimer( TimeLeft ));
+        }
     }
 
     protected override void OnEnemyDeath(Enemy enemy)
@@ -28,10 +49,10 @@ public class DestroyRuleManager : RuleTypeBase
 
         if (TargetEnemy == EnemyType.Any || TargetEnemy == enemy.Type)
         {
-            
             if( AmountOfEnemiesToDestroy > 0 )
             {
                 DecreaseOneEnemy();
+                CheckClearCondition();
             }
             else
             {
@@ -50,7 +71,13 @@ public class DestroyRuleManager : RuleTypeBase
 
     void BuildMessage()
     {
-        string message = $"Destrua {AmountOfEnemiesToDestroy} de {TargetEnemy}";
+        string message = "";
+
+        if( _isTimed )
+        {
+            message = $"Destrua {AmountOfEnemiesToDestroy} de {TargetEnemy} em {TimeLeft}";
+        }
+        message = $"Destrua {AmountOfEnemiesToDestroy} de {TargetEnemy}";
 
         if(RulesText.instance == null) return;
 
@@ -59,6 +86,23 @@ public class DestroyRuleManager : RuleTypeBase
 
     private void CheckClearCondition()
     {
-        
+        bool allEnemiesKilled = (AmountOfEnemiesToDestroy <= 0);
+
+
+        if( allEnemiesKilled )
+        {
+
+            RuleCompleted();
+        }
+    }
+
+    protected override void ResetManager()
+    {
+        TimeLeft = 0;
+        _isTimed = false;
+        AmountOfEnemiesToDestroy = 0;
+        TargetEnemy = EnemyType.Any;
+        IsActive = false;
+        complete = false;
     }
 }
