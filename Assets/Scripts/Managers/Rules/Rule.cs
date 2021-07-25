@@ -9,12 +9,13 @@ public abstract class Rule : ScriptableObject
     public string _ruleText;
 
     [ReadOnly] public RuleType Type = RuleType.Destroy;
-    [SerializeField] bool _isTimed;
-    [ConditionalField(nameof(_isTimed))] [SerializeField] float _RuleTime;
-    [SerializeField] protected EnemyType _enemyType;
+    
+    public bool IsTimed;
+    [ConditionalField(nameof(IsTimed))] public float RuleTime;
+    
+    
+    public EnemyType TargetEnemy;
 
     public abstract string GetRuleText();
-
-
     public abstract void AssingType();
 }

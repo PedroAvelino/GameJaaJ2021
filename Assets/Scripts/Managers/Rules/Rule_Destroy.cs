@@ -1,10 +1,9 @@
-using MyBox;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "DestroyRule_", menuName = "ScriptableObjects/Rules/Destroy", order = 1)]
+[CreateAssetMenu(fileName = "DestroyRule_", menuName = "Rules/Destroy", order = 1)]
 public class Rule_Destroy : Rule
 {
-    [SerializeField] int _AmountOfEnemiesToDestroy;
+    public int AmountOfEnemiesToDestroy;
 
     public override void AssingType()
     {
@@ -13,6 +12,6 @@ public class Rule_Destroy : Rule
 
     public override string GetRuleText()
     {
-        return $"Destrua {_AmountOfEnemiesToDestroy} de {_enemyType}";
+        return $"Destrua {AmountOfEnemiesToDestroy} de {TargetEnemy}";
     }
 }

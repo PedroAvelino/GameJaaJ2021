@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ruleText: 
   Type: 1
-  _isTimed: 0
-  _RuleTime: 0
-  _enemyType: 0
-  _AmountOfEnemiesToDestroy: 12
+  IsTimed: 0
+  RuleTime: 0
+  TargetEnemy: 0
+  AmountOfEnemiesToDestroy: 10
