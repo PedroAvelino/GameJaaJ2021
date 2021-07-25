@@ -9,11 +9,11 @@ public abstract class Rule : ScriptableObject
     public string _ruleText;
 
     [ReadOnly] public RuleType Type = RuleType.Destroy;
-    
+
     public bool IsTimed;
     [ConditionalField(nameof(IsTimed))] public float RuleTime;
-    
-    
+
+
     public EnemyType TargetEnemy;
 
     public abstract string GetRuleText();

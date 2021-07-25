@@ -5,7 +5,7 @@ public class DestroyRuleManager : RuleTypeBase
 {
 
     [Separator("Current Rules Data")]
-    [ReadOnly] public float TimeLeft;
+    [ReadOnly] public float TimeLeft = -1;
     [ReadOnly] public int AmountOfEnemiesToDestroy;
     [ReadOnly] public EnemyType TargetEnemy;
 
