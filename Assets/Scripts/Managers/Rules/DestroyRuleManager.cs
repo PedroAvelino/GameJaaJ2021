@@ -1,4 +1,5 @@
 using MyBox;
+using System.Collections;
 using UnityEngine;
 
 //Deals with rules of the type destroy
@@ -6,12 +7,6 @@ public class DestroyRuleManager : RuleTypeBase
 {
 
     [Separator("Current Rules Data")]
-    
-    [ReadOnly] 
-    public float TimeLeft = -1;
-    
-    [SerializeField] [ReadOnly] 
-    bool _isTimed;
     
     [ReadOnly] 
     public int AmountOfEnemiesToDestroy;
@@ -25,21 +20,23 @@ public class DestroyRuleManager : RuleTypeBase
 
         if( myRule.IsTimed )
         {
-            _isTimed = true;
+            isTimed = true;
             TimeLeft = myRule.RuleTime;
         }
 
         TargetEnemy = myRule.TargetEnemy;
         AmountOfEnemiesToDestroy = myRule.AmountOfEnemiesToDestroy;
+        BuildRuleMessage();
     }
 
+    [ContextMenu("Start Rule")]
     protected override void StartRule()
     {
         if (IsActive == false) return;
         
-        if(_isTimed)
+        if(isTimed)
         {
-            StartCoroutine( StartTimer( TimeLeft ));
+            StartCoroutine( StartTimerRoutine( ));
         }
     }
 
@@ -66,18 +63,21 @@ public class DestroyRuleManager : RuleTypeBase
     void DecreaseOneEnemy()
     {
         AmountOfEnemiesToDestroy--;
-        BuildMessage();
+        BuildRuleMessage();
     }
 
-    void BuildMessage()
+    protected override void BuildRuleMessage()
     {
         string message = "";
 
-        if( _isTimed )
+        if ( isTimed )
         {
-            message = $"Destrua {AmountOfEnemiesToDestroy} de {TargetEnemy} em {TimeLeft}";
+            message = $"Destrua {AmountOfEnemiesToDestroy} de {TargetEnemy} em {TimeLeft.ToString("F0")}";
         }
-        message = $"Destrua {AmountOfEnemiesToDestroy} de {TargetEnemy}";
+        else
+        {
+            message = $"Destrua {AmountOfEnemiesToDestroy} de {TargetEnemy}";
+        }
 
         if(RulesText.instance == null) return;
 
@@ -99,10 +99,10 @@ public class DestroyRuleManager : RuleTypeBase
     protected override void ResetManager()
     {
         TimeLeft = 0;
-        _isTimed = false;
+        isTimed = false;
         AmountOfEnemiesToDestroy = 0;
         TargetEnemy = EnemyType.Any;
         IsActive = false;
-        complete = false;
+        complete = false;   
     }
 }

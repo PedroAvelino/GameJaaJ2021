@@ -6,9 +6,18 @@ using UnityEngine;
 //This class is the base for expecific rule managers
 public abstract class RuleTypeBase : MonoBehaviour
 {
+
+    [Separator("Base Data")]
     [SerializeField] 
     RuleType TargetRule;
-    
+
+    [ReadOnly]
+    public float TimeLeft = -1;
+
+    [SerializeField]
+    [ReadOnly]
+    protected bool isTimed;
+
     [ReadOnly] 
     public bool IsActive;
 
@@ -49,6 +58,7 @@ public abstract class RuleTypeBase : MonoBehaviour
         if (IsActive == false) return;
         OnRuleFailed?.Invoke(  );
 
+        print("Failed");
         ResetManager();
     }
 
@@ -60,23 +70,25 @@ public abstract class RuleTypeBase : MonoBehaviour
         OnRuleCompleted?.Invoke(  );
     }
 
-    protected virtual IEnumerator StartTimer( float time )
+    protected virtual IEnumerator StartTimerRoutine( )
     {
         if (IsActive == false) yield return null;
 
-        while (time > 0 )
+        while (TimeLeft > 0 && complete == false)
         {
-            if( complete )
-            {
-                yield break;
-            }
-
-            time -= Time.deltaTime;
-
+            TimeLeft -= Time.deltaTime;
+            BuildRuleMessage();
             yield return null;
+        }
+
+        if( TimeLeft <= 0f )
+        {
+            RuleFailed();
         }
     }
 
+
+    protected abstract void BuildRuleMessage();
     protected abstract void StartRule();
     protected abstract void GetRuleData( Rule rule );
     protected abstract void OnEnemyDeath( Enemy enemy );

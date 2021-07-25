@@ -31,7 +31,7 @@ public class RulesText : MonoBehaviour
     {
         if( _text == null ) return;
 
-        _text.text = rule.GetRuleText();
+        //_text.text = rule.GetRuleText();
     }
     public void GetTextToDisplay( string Text )
     {
