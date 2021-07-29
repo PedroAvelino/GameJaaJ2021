@@ -5,6 +5,7 @@ public abstract class Enemy : PoolableObject
 {
     public EnemyType Type;
     public static Action<Enemy> OnEnemyDeath;
+    public static Action<Enemy> OnEnemyCaptured;
 
     public virtual void Death()
     {

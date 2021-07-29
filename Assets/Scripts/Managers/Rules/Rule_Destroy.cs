@@ -3,7 +3,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "DestroyRule_", menuName = "Rules/Destroy", order = 1)]
 public class Rule_Destroy : Rule
 {
-    public int AmountOfEnemiesToDestroy;
 
     public override void AssingType()
     {
@@ -12,6 +11,6 @@ public class Rule_Destroy : Rule
 
     public override string GetRuleText()
     {
-        return $"Destrua {AmountOfEnemiesToDestroy} de {TargetEnemy}";
+        return $"Destrua {AmountOfEnemiesToSpawn} de {TargetEnemy}";
     }
 }

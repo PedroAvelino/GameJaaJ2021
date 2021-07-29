@@ -1,30 +1,29 @@
-using MyBox;
+﻿using MyBox;
 using UnityEngine;
 
-//Deals with rules of the type destroy
-public class DestroyRuleManager : RuleTypeBase
+public class CaptureRuleManager : RuleTypeBase
 {
 
     [Separator("Current Rules Data")]
-    
-    [ReadOnly] 
-    public int AmountOfEnemiesToDestroy;
-    
-    [ReadOnly] 
+
+    [ReadOnly]
+    public int AmountOfEnemiesToCapture;
+
+    [ReadOnly]
     public EnemyType TargetEnemy;
 
     protected override void GetRuleData(Rule rule)
     {
-        var myRule = (Rule_Destroy)rule;//We are assuming this is a destroy rule
+        var myRule = (Rule_Destroy)rule;
 
-        if( myRule.IsTimed )
+        if (myRule.IsTimed)
         {
             isTimed = true;
             TimeLeft = myRule.RuleTime;
         }
 
         TargetEnemy = myRule.TargetEnemy;
-        AmountOfEnemiesToDestroy = myRule.AmountOfEnemiesToSpawn;
+        AmountOfEnemiesToCapture = myRule.AmountOfEnemiesToSpawn;
         BuildRuleMessage();
     }
 
@@ -32,20 +31,20 @@ public class DestroyRuleManager : RuleTypeBase
     protected override void StartRule()
     {
         if (IsActive == false) return;
-        
-        if(isTimed)
+
+        if (isTimed)
         {
-            StartCoroutine( StartTimerRoutine( ));
+            StartCoroutine(StartTimerRoutine());
         }
     }
 
     protected override void OnEnemyDeath(Enemy enemy)
     {
-        if( IsActive == false || enemy == null ) return;
+        if (IsActive == false || enemy == null) return;
 
         if (TargetEnemy == EnemyType.Any || TargetEnemy == enemy.Type)
         {
-            if( AmountOfEnemiesToDestroy > 0 )
+            if (AmountOfEnemiesToCapture > 0)
             {
                 DecreaseOneEnemy();
                 CheckClearCondition();
@@ -61,7 +60,7 @@ public class DestroyRuleManager : RuleTypeBase
     [ContextMenu("Decrease Enemy Count")]
     void DecreaseOneEnemy()
     {
-        AmountOfEnemiesToDestroy--;
+        AmountOfEnemiesToCapture--;
         BuildRuleMessage();
     }
 
@@ -69,26 +68,26 @@ public class DestroyRuleManager : RuleTypeBase
     {
         string message = "";
 
-        if ( isTimed )
+        if (isTimed)
         {
-            message = $"Destrua {AmountOfEnemiesToDestroy} de {TargetEnemy} em {TimeLeft.ToString("F0")}";
+            message = $"Capture {AmountOfEnemiesToCapture} de {TargetEnemy} em {TimeLeft.ToString("F0")}";
         }
         else
         {
-            message = $"Destrua {AmountOfEnemiesToDestroy} de {TargetEnemy}";
+            message = $"Capture {AmountOfEnemiesToCapture} de {TargetEnemy}";
         }
 
-        if(RulesText.instance == null) return;
+        if (RulesText.instance == null) return;
 
-        RulesText.instance.GetTextToDisplay( message );
+        RulesText.instance.GetTextToDisplay(message);
     }
 
-    protected  override void CheckClearCondition()
+    protected override void CheckClearCondition()
     {
-        bool allEnemiesKilled = (AmountOfEnemiesToDestroy <= 0);
+        bool allEnemiesCaptured = (AmountOfEnemiesToCapture <= 0);
 
 
-        if( allEnemiesKilled )
+        if (allEnemiesCaptured)
         {
 
             RuleCompleted();
@@ -99,9 +98,9 @@ public class DestroyRuleManager : RuleTypeBase
     {
         TimeLeft = 0;
         isTimed = false;
-        AmountOfEnemiesToDestroy = 0;
+        AmountOfEnemiesToCapture = 0;
         TargetEnemy = EnemyType.Any;
         IsActive = false;
-        complete = false;   
+        complete = false;
     }
 }

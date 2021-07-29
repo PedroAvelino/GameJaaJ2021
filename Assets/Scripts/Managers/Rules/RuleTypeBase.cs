@@ -31,6 +31,7 @@ public abstract class RuleTypeBase : MonoBehaviour
     {
         RulesManager.OnNewRuleGiven += CheckIfIsTargetRule;
         Enemy.OnEnemyDeath += OnEnemyDeath;
+        //Enemy.OnEnemyCaptured += OnEnemyDeath;
         GameManager.OnStartRule += StartRule;
     }
 
@@ -50,6 +51,7 @@ public abstract class RuleTypeBase : MonoBehaviour
     {
         RulesManager.OnNewRuleGiven -= CheckIfIsTargetRule;
         Enemy.OnEnemyDeath -= OnEnemyDeath;
+        //Enemy.OnEnemyCaptured -= OnEnemyDeath;
         GameManager.OnStartRule -= StartRule;
     }
 
@@ -93,5 +95,6 @@ public abstract class RuleTypeBase : MonoBehaviour
     protected abstract void GetRuleData( Rule rule );
     protected abstract void OnEnemyDeath( Enemy enemy );
     protected abstract void ResetManager();
+    protected abstract void CheckClearCondition();
 
 }
