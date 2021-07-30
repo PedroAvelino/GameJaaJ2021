@@ -27,6 +27,8 @@ public abstract class RuleTypeBase : MonoBehaviour
     [SerializeField] [ReadOnly] 
     protected bool complete;
 
+    protected IEnumerator currentRoutine;
+
     private void OnEnable()
     {
         RulesManager.OnNewRuleGiven += CheckIfIsTargetRule;
@@ -35,10 +37,21 @@ public abstract class RuleTypeBase : MonoBehaviour
         GameManager.OnStartRule += StartRule;
     }
 
+    private void Awake()
+    {
+        OnAwake();
+    }
+
+    protected void OnAwake()
+    {
+        currentRoutine = StartTimerRoutine();
+    }
 
     private void CheckIfIsTargetRule( Rule rule )
     {
-        if( rule == null ) return;
+        ResetManager();
+
+        if ( rule == null ) return;
 
         if( rule.Type == TargetRule )
         {

@@ -32,10 +32,11 @@ public class DestroyRuleManager : RuleTypeBase
     protected override void StartRule()
     {
         if (IsActive == false) return;
-        
-        if(isTimed)
+
+        if (isTimed)
         {
-            StartCoroutine( StartTimerRoutine( ));
+            StopCoroutine(currentRoutine);
+            StartCoroutine( currentRoutine );
         }
     }
 
