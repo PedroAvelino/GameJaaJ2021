@@ -23,11 +23,11 @@ public class EnemyManager : MonoBehaviour
 
         int randomIndex= Random.Range( 0 , spawnPositions.Count );
 
-        //EnemySpawnPosition randomRange = 
+        EnemySpawnPosition randomRange = spawnPositions[randomIndex];
 
         for (int i = 0; i < amountOfEnemiesToSpawn; i++)
         {
-            Pooler.GetObject( EnemiesToSpawn[0], transform.position, Quaternion.identity );
+            Pooler.GetObject( EnemiesToSpawn[0], randomRange.transform.position, Quaternion.identity );
         }
     }
 
