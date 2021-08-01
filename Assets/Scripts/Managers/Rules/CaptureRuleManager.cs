@@ -1,4 +1,5 @@
 ﻿using MyBox;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class CaptureRuleManager : RuleTypeBase
@@ -9,12 +10,22 @@ public class CaptureRuleManager : RuleTypeBase
     [ReadOnly]
     public int AmountOfEnemiesToCapture;
 
+    [Separator("Capture Points")]
     [ReadOnly]
-    public EnemyType TargetEnemy;
+    [SerializeField]
+    List<CapturePoint> _allcapturePoints = new List<CapturePoint>();
+
+    [ReadOnly] public CapturePoint _featuredCapturePoint;
+
+
+    private void Awake()
+    {
+        GetAllCapturePoints();
+    }
 
     protected override void GetRuleData(Rule rule)
     {
-        var myRule = (Rule_Destroy)rule;
+        var myRule = (Rule_Capture)rule;
 
         if (myRule.IsTimed)
         {
@@ -22,8 +33,6 @@ public class CaptureRuleManager : RuleTypeBase
             TimeLeft = myRule.RuleTime;
         }
 
-        TargetEnemy = myRule.TargetEnemy;
-        AmountOfEnemiesToCapture = myRule.AmountOfEnemiesToSpawn;
         BuildRuleMessage();
     }
 
@@ -32,51 +41,40 @@ public class CaptureRuleManager : RuleTypeBase
     {
         if (IsActive == false) return;
 
+        ActivateRandomCapturePoint();
+
         if (isTimed)
         {
-            StartCoroutine(StartTimerRoutine());
+            StopCoroutine(currentRoutine);
+            StartCoroutine(currentRoutine);
         }
     }
 
-    protected override void OnEnemyDeath(Enemy enemy)
+    private void Update()
     {
-        if (IsActive == false || enemy == null) return;
-
-        if (TargetEnemy == EnemyType.Any || TargetEnemy == enemy.Type)
+        if( IsActive )
         {
-            if (AmountOfEnemiesToCapture > 0)
-            {
-                DecreaseOneEnemy();
-                CheckClearCondition();
-            }
-            else
+            if( _featuredCapturePoint != null)
             {
                 CheckClearCondition();
             }
-
         }
     }
 
-    [ContextMenu("Decrease Enemy Count")]
-    void DecreaseOneEnemy()
+    private void ActivateRandomCapturePoint()
     {
-        AmountOfEnemiesToCapture--;
-        BuildRuleMessage();
+        int randomIndex = Random.Range(0, _allcapturePoints.Count);
+
+        _featuredCapturePoint = _allcapturePoints[randomIndex];
+
+        _featuredCapturePoint.gameObject.SetActive(true);
+        _featuredCapturePoint.ActivateCapturePoint();
     }
 
     protected override void BuildRuleMessage()
     {
         string message = "";
-
-        if (isTimed)
-        {
-            message = $"Capture {AmountOfEnemiesToCapture} de {TargetEnemy} em {TimeLeft.ToString("F0")}";
-        }
-        else
-        {
-            message = $"Capture {AmountOfEnemiesToCapture} de {TargetEnemy}";
-        }
-
+        message = $"Capture o ponto";
         if (RulesText.instance == null) return;
 
         RulesText.instance.GetTextToDisplay(message);
@@ -84,23 +82,41 @@ public class CaptureRuleManager : RuleTypeBase
 
     protected override void CheckClearCondition()
     {
-        bool allEnemiesCaptured = (AmountOfEnemiesToCapture <= 0);
+        complete = _featuredCapturePoint.isComplete;
 
-
-        if (allEnemiesCaptured)
+        if( complete )
         {
+            _featuredCapturePoint.ResetCapturePoint();
+            OnRuleCompleted?.Invoke();
+            ResetManager();
+        }
+    }
 
-            RuleCompleted();
+    void GetAllCapturePoints()
+    {
+        CapturePoint[] foundPoints = FindObjectsOfType<CapturePoint>();
+
+        foreach (var c in foundPoints)
+        {
+            if( _allcapturePoints.Contains(c) == false )
+            {
+                _allcapturePoints.Add(c);
+                c.gameObject.SetActive(false);
+            }
         }
     }
 
     protected override void ResetManager()
     {
         TimeLeft = 0;
+        _featuredCapturePoint = null;
         isTimed = false;
-        AmountOfEnemiesToCapture = 0;
-        TargetEnemy = EnemyType.Any;
         IsActive = false;
         complete = false;
+    }
+
+    protected override void OnEnemyDeath(Enemy enemy)
+    {
+       
     }
 }

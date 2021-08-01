@@ -15,6 +15,11 @@ public class RulesManager : MonoBehaviour
         _currentRule = null;
     }
 
+    private void Start()
+    {
+        Invoke("GetNewRule", 3f);
+    }
+
     private void OnEnable()
     {
         RuleTypeBase.OnRuleCompleted += GetNewRule;
