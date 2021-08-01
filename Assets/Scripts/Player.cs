@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
     {
         if( Input.GetKeyDown(KeyCode.Z))
         {
-            _dot.TryDash();
+            _dot.TryDash(GetMoveVector());
         }
     }
 

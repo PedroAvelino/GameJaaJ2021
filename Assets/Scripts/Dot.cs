@@ -22,6 +22,9 @@ public class Dot : MonoBehaviour
     [SerializeField] Rigidbody2D _rb;
     [SerializeField] SpriteRenderer _sr;
 
+    [AutoProperty] [SerializeField]
+    AudioSource _dashSound;
+
 #if UNITY_EDITOR
     private void OnValidate()
     {
@@ -54,9 +57,10 @@ public class Dot : MonoBehaviour
         _rb.velocity = moveDirection * _currentPlayerSpeed;
     }
 
-    public void TryDash()
+    public void TryDash( Vector2 moveDirection )
     {
         if( _isDashing || _canDash == false ) return;
+        if (moveDirection == Vector2.zero) return;
 
         StartCoroutine( Dash() );
     }
@@ -70,6 +74,8 @@ public class Dot : MonoBehaviour
         _sr.color = Color.blue;
         
         _currentPlayerSpeed = _dashSpeed;
+
+        _dashSound.Play();
         yield return new WaitForSeconds( _dashTime );
 
         _isDashing = false;
