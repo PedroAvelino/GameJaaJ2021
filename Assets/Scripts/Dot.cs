@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEditor;
 using UnityEngine;
@@ -91,9 +90,18 @@ public class Dot : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
         Enemy enemy = other.gameObject.GetComponent<Enemy>();
-        if( enemy != null )
+        if( enemy != null && _isDashing )
         {
             enemy.Death();
         }
+        else
+        {
+            Death();
+        }
+    }
+
+    private void Death()
+    {
+        
     }
 }

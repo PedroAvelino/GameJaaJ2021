@@ -175,6 +175,7 @@ GameObject:
   - component: {fileID: 6078129254994871482}
   - component: {fileID: -5199562765089659038}
   - component: {fileID: -2473313723804153748}
+  - component: {fileID: 7733068921781137559}
   m_Layer: 0
   m_Name: "Salom\xE3o"
   m_TagString: Untagged
@@ -209,7 +210,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94e425051187e5b4d83f354830734e72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 0
+  _speed: 2
+  Type: 6
   destination: {fileID: 0}
 --- !u!50 &-2473313723804153748
 Rigidbody2D:
@@ -232,6 +234,22 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!58 &7733068921781137559
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6078129254994871483}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.22
 --- !u!1 &6078129255950282548
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,7 +358,7 @@ Transform:
   m_GameObject: {fileID: 6078129256212964212}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children:
   - {fileID: 6078129256218274841}
   - {fileID: 6078129256332889587}
