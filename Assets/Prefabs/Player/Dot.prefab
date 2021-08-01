@@ -156,3 +156,4 @@ MonoBehaviour:
   _canDash: 1
   _rb: {fileID: 5510362162382046597}
   _sr: {fileID: 5510362162382046599}
+  _col: {fileID: 0}

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEditor;
 using UnityEngine;
+using MyBox;
 
 [RequireComponent(typeof(Player))]
 public class Dot : MonoBehaviour
@@ -18,7 +19,7 @@ public class Dot : MonoBehaviour
 
 
     float _currentPlayerSpeed;
-    [Header("Components")]
+    [Separator("Components")]
     [SerializeField] Rigidbody2D _rb;
     [SerializeField] SpriteRenderer _sr;
 
