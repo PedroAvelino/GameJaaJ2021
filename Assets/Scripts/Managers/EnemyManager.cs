@@ -30,13 +30,22 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] [ReadOnly]
     List<EnemySpawnPosition> _activeSpawners;
 
-    int enemiesToSpawnOnThisRound;
     IEnumerator currentRoutine;
 
     private void OnEnable()
     {
         RulesManager.OnNewRuleGiven += PrepareRound;
         GameManager.OnStartRule += StartSpawning;
+        RuleTypeBase.OnRuleCompleted += CollectEnemies;
+
+    }
+
+    private void CollectEnemies()
+    {
+        foreach (var enemy in _allEnemiesSpawned)
+        {
+            enemy.ReturnToPool();
+        }
     }
 
     private void Awake()
@@ -48,6 +57,7 @@ public class EnemyManager : MonoBehaviour
     {
         _spawnPositions = new List<EnemySpawnPosition>();
         _activeSpawners = new List<EnemySpawnPosition>();
+        _allEnemiesSpawned = new List<Enemy>();
 
         //I do this because i don't want to deal with arrays
         EnemySpawnPosition[] allSpawnPosition = FindObjectsOfType<EnemySpawnPosition>();
@@ -64,12 +74,11 @@ public class EnemyManager : MonoBehaviour
         SelectSpawners();
 
         _featuredEnemy = rule.TargetEnemy;
-
-        enemiesToSpawnOnThisRound = rule.AmountOfEnemiesToSpawn;
     }
 
     private void StartSpawning()
     {
+        StopAllCoroutines();
         currentRoutine = null;
         currentRoutine = SpawnRoutine();
         StartCoroutine( currentRoutine );
@@ -85,23 +94,28 @@ public class EnemyManager : MonoBehaviour
         _activeSpawners.Clear();
 
         int selectedAmount = 0;
-        List<EnemySpawnPosition> availableSpawners = new List<EnemySpawnPosition>();
-        availableSpawners = _spawnPositions;
 
         while ( selectedAmount != TOTAL_ACTIVE_SPAWNERS )
         {
-            int randomIndex = Random.Range( 0, availableSpawners.Count );
-            EnemySpawnPosition pos = availableSpawners[ randomIndex ];
+            int randomIndex = Random.Range( 0, _spawnPositions.Count );
+            EnemySpawnPosition pos = _spawnPositions[ randomIndex ];
 
             if( _activeSpawners.Contains( pos ) == false )
             {
+                bool foundAdjacent = false;
+                foreach (var n in _activeSpawners)
+                {
+                    if( pos == n.destinationSpawn ) 
+                    {
+                        foundAdjacent = true;
+                    }
+                }
 
+                if( foundAdjacent ) continue;
                 EnemySpawnPosition toRemove = pos.destinationSpawn;
 
                 _activeSpawners.Add( pos );
 
-                availableSpawners.Remove(toRemove);
-                availableSpawners.Remove(pos);
                 selectedAmount++;
             }
         }
@@ -129,6 +143,8 @@ public class EnemyManager : MonoBehaviour
         Enemy enemyToSpawn = GetFeaturedEnemy();
 
         Enemy enemy = (Enemy)Pooler.GetObject( enemyToSpawn , spawnPosition.transform.position, Quaternion.identity);
+
+        _allEnemiesSpawned.Add( enemy );
 
         enemy.destination = spawnPosition.destinationSpawn.transform;
     }
@@ -159,8 +175,6 @@ public class EnemyManager : MonoBehaviour
 
     public void ClearAllEnemies()
     {
-        _allEnemiesSpawned = new List<Enemy>();
-
         foreach (Enemy enemy in _allEnemiesSpawned)
         {
             enemy.ReturnToPool();
@@ -171,6 +185,7 @@ public class EnemyManager : MonoBehaviour
     {
         RulesManager.OnNewRuleGiven -= PrepareRound;
         GameManager.OnStartRule -= StartSpawning;
+        RuleTypeBase.OnRuleCompleted -= CollectEnemies;
 
         Pooler.ClearPool();
     }

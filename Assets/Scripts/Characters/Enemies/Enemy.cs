@@ -47,4 +47,9 @@ public abstract class Enemy : PoolableObject
     {
         destination = null;
     }
+
+    public override void PrepareForUse()
+    {
+        destination = null;
+    }
 }

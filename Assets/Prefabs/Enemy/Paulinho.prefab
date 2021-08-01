@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 1516301108852151509}
   - component: {fileID: -6157792142552374347}
   - component: {fileID: -85485264536910800}
+  - component: {fileID: 8992962526901531102}
   m_Layer: 0
   m_Name: Paulinho
   m_TagString: Untagged
@@ -109,7 +110,7 @@ Transform:
   m_GameObject: {fileID: 1516301108852151508}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.221, z: 0}
-  m_LocalScale: {x: 0.6502475, y: 0.6502475, z: 0.6502475}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1516301110273142280}
   m_Father: {fileID: 0}
@@ -127,7 +128,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94e425051187e5b4d83f354830734e72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 0
+  _speed: 2
+  Type: 4
   destination: {fileID: 0}
 --- !u!50 &-85485264536910800
 Rigidbody2D:
@@ -150,6 +152,22 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!58 &8992962526901531102
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516301108852151508}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.2
 --- !u!1 &1516301109894312530
 GameObject:
   m_ObjectHideFlags: 0
@@ -422,7 +440,7 @@ Transform:
   m_GameObject: {fileID: 1516301110273142287}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 1516301110038021362}
   - {fileID: 1516301109935655966}

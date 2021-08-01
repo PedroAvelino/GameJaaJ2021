@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destinationSpawn: {fileID: 6021006122449357443}
+  Spawning: 0
 --- !u!1 &1250750165731486893
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,6 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destinationSpawn: {fileID: 2577446499951472561}
+  Spawning: 0
 --- !u!1 &3407487087537585330
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,6 +182,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9118688098217067864}
   - component: {fileID: 5655423380621848840}
+  - component: {fileID: 390459698647784525}
   m_Layer: 0
   m_Name: Lava
   m_TagString: Untagged
@@ -253,6 +256,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &390459698647784525
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3407487087537585330}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &3561027712807606383
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,6 +403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destinationSpawn: {fileID: 268458621960683863}
+  Spawning: 0
 --- !u!1 &3845730106733178652
 GameObject:
   m_ObjectHideFlags: 0
@@ -423,6 +448,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destinationSpawn: {fileID: 1048100158669695839}
+  Spawning: 0
 --- !u!1 &4311402815335602366
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,6 +493,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destinationSpawn: {fileID: 5556101156933890651}
+  Spawning: 0
 --- !u!1 &4603286145039178836
 GameObject:
   m_ObjectHideFlags: 0
@@ -511,6 +538,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destinationSpawn: {fileID: 4557299248241399847}
+  Spawning: 0
 --- !u!1 &5040726185234941654
 GameObject:
   m_ObjectHideFlags: 0
@@ -812,6 +840,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destinationSpawn: {fileID: 7595462684276154607}
+  Spawning: 0
 --- !u!1 &5825581266346131544
 GameObject:
   m_ObjectHideFlags: 0
@@ -856,3 +885,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destinationSpawn: {fileID: 3363576257945736191}
+  Spawning: 0

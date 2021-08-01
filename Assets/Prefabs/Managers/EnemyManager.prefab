@@ -45,7 +45,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _featuredEnemy: 0
   EnemiesToSpawn:
-  - {fileID: 0}
+  - {fileID: -6749193394473690011, guid: 44c358b5a9c8c7046847aed6658e2d03, type: 3}
+  - {fileID: -5199562765089659038, guid: 68c7499818e092747b81a2c4b70c61f5, type: 3}
+  - {fileID: -6157792142552374347, guid: ba3af1af12f8d004c84dbf2aa4b9cec2, type: 3}
+  - {fileID: 8994463651631331383, guid: 95d350645ac744b42ba1c6825e05eb30, type: 3}
+  - {fileID: -8208692673590473451, guid: e3e3006887cdab54099595385a740ba2, type: 3}
+  - {fileID: 4706903359321251333, guid: aec27efcbc8496d48b013a60961d2532, type: 3}
   _allEnemiesSpawned: []
   _spawnInterval: 1
   _spawnPositions: []
