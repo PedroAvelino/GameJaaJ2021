@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5510362162382046597}
   - component: {fileID: 5510362162382046594}
   - component: {fileID: 5510362162382046595}
+  - component: {fileID: 1380211673186658851}
   m_Layer: 0
   m_Name: Dot
   m_TagString: Untagged
@@ -156,4 +157,22 @@ MonoBehaviour:
   _canDash: 1
   _rb: {fileID: 5510362162382046597}
   _sr: {fileID: 5510362162382046599}
-  _col: {fileID: 0}
+--- !u!232 &1380211673186658851
+DistanceJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5510362162382046592}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0.09, y: 0}
+  m_AutoConfigureDistance: 0
+  m_Distance: 2.6601694
+  m_MaxDistanceOnly: 1

@@ -156,11 +156,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5510362162382046598, guid: b81326cc5439d2043ae7476d75e7d2a1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.29
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5510362162382046598, guid: b81326cc5439d2043ae7476d75e7d2a1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.19
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5510362162382046598, guid: b81326cc5439d2043ae7476d75e7d2a1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -196,68 +196,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b81326cc5439d2043ae7476d75e7d2a1, type: 3}
---- !u!1 &714042034 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5510362162382046592, guid: b81326cc5439d2043ae7476d75e7d2a1, type: 3}
-  m_PrefabInstance: {fileID: 592118677}
-  m_PrefabAsset: {fileID: 0}
---- !u!232 &714042035
-DistanceJoint2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 714042034}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 0}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0, y: 0}
-  m_AutoConfigureDistance: 0
-  m_Distance: 2.6601694
-  m_MaxDistanceOnly: 1
 --- !u!58 &714042038 stripped
 CircleCollider2D:
   m_CorrespondingSourceObject: {fileID: 5510362162382046596, guid: b81326cc5439d2043ae7476d75e7d2a1, type: 3}
   m_PrefabInstance: {fileID: 592118677}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1693158727 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3407487087537585330, guid: ba2767602d5c14847bcfa2cfa27ae178, type: 3}
-  m_PrefabInstance: {fileID: 8083981525255500439}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1693158730
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1693158727}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 347b1c87294ae8a4c97953e3399b3db8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!58 &1693158731
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1693158727}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 5.6699996
 --- !u!1 &1901741762
 GameObject:
   m_ObjectHideFlags: 0
