@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ae0369fe7d4e01428413d3579a2b340, type: 3}
   m_Name: DestroyRule_Test2
   m_EditorClassIdentifier: 
-  _ruleText: 
   Type: 1
   IsTimed: 1
   RuleTime: 20
-  TargetEnemy: 0
   AmountOfEnemiesToSpawn: 3
+  TargetEnemy: 2

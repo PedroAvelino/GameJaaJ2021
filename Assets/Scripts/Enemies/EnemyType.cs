@@ -1,5 +1,10 @@
 public enum EnemyType
 {
     Any,
-    Basic
+    Momo,
+    Armando,
+    Dunban,
+    Paulinho,
+    Ezio,
+    Salomao
 }
