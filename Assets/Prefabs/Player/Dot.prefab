@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerSpeed: 4
-  _dashSpeed: 15
+  _dashSpeed: 12
   _dashTime: 0.1
   _dashCooldown: 0.25
   _isDashing: 0
