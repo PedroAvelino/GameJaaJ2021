@@ -64,7 +64,6 @@ public abstract class RuleTypeBase : MonoBehaviour
     {
         RulesManager.OnNewRuleGiven -= CheckIfIsTargetRule;
         Enemy.OnEnemyDeath -= OnEnemyDeath;
-        //Enemy.OnEnemyCaptured -= OnEnemyDeath;
         GameManager.OnStartRule -= StartRule;
     }
 

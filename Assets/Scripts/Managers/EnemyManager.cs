@@ -136,21 +136,41 @@ public class EnemyManager : MonoBehaviour
         }
     }
 
-    private void SpawnEnemy()
+    private void SpawnEnemy(  )
     {
         EnemySpawnPosition spawnPosition = GetRandomActiveSpawn();
+        Enemy enemyToSpawn;
 
-        Enemy enemyToSpawn = GetFeaturedEnemy();
+        bool isFeaturedNext = (Random.Range(1, 3) == 1); 
+
+        if( isFeaturedNext )
+        {
+            enemyToSpawn = GetFeaturedEnemy();
+        }else
+        {
+            enemyToSpawn = GetRandomEnemy();
+        }
 
         Enemy enemy = (Enemy)Pooler.GetObject( enemyToSpawn , spawnPosition.transform.position, Quaternion.identity);
-
         _allEnemiesSpawned.Add( enemy );
-
         enemy.destination = spawnPosition.destinationSpawn.transform;
+    }
+
+    Enemy GetRandomEnemy()
+    {
+        int randomIndex = Random.Range(0, EnemiesToSpawn.Length);
+        Enemy toSpawn = EnemiesToSpawn[randomIndex];
+        return toSpawn;
     }
 
     private Enemy GetFeaturedEnemy()
     {
+
+        if( _featuredEnemy == EnemyType.Any)
+        {
+            return GetRandomEnemy();
+        }
+
         Enemy foundEnemy;
 
         foreach (var e in EnemiesToSpawn)

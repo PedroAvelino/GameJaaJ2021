@@ -74,7 +74,14 @@ public class CaptureRuleManager : RuleTypeBase
     protected override void BuildRuleMessage()
     {
         string message = "";
-        message = $"Capture o ponto";
+        if( isTimed )
+        {
+            message = $"Capture o ponto em {TimeLeft.ToString("F0")}";
+        }
+        else
+        {
+            message = $"Capture o ponto";
+        }
         if (RulesText.instance == null) return;
 
         RulesText.instance.GetTextToDisplay(message);

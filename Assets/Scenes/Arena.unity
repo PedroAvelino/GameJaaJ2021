@@ -466,11 +466,7 @@ PrefabInstance:
       objectReference: {fileID: 714042038}
     - target: {fileID: 5510362162382046595, guid: b81326cc5439d2043ae7476d75e7d2a1, type: 3}
       propertyPath: _dashSpeed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 5510362162382046595, guid: b81326cc5439d2043ae7476d75e7d2a1, type: 3}
-      propertyPath: _playerSpeed
-      value: 4
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5510362162382046598, guid: b81326cc5439d2043ae7476d75e7d2a1, type: 3}
       propertyPath: m_RootOrder

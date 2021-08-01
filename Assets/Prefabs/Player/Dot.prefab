@@ -98,8 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9673488eb0523fa408254ab32ad075e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerSpeed: 7
-  _dashSpeed: 30
+  _playerSpeed: 4
+  _dashSpeed: 15
   _dashTime: 0.1
   _dashCooldown: 0.25
   _isDashing: 0
