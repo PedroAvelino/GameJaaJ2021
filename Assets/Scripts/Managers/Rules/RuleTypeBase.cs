@@ -81,22 +81,36 @@ public abstract class RuleTypeBase : MonoBehaviour
     {
 
         if (IsActive == false) return;
+        
         complete = true;
+
+        StopCoroutine(currentRoutine);
+
         OnRuleCompleted?.Invoke(  );
     }
 
+    //Eu odeio coroutines com todas as minhas forças puta que pariu
     protected virtual IEnumerator StartTimerRoutine( )
     {
         if (IsActive == false) yield return null;
 
-        while (TimeLeft > 0 && complete == false)
+        bool onLoop = true;
+
+        while ( onLoop )
         {
+
+            if (TimeLeft <= 0 || complete )
+            {
+                onLoop = false;
+                yield return null;
+            }
+
             TimeLeft -= Time.deltaTime;
             BuildRuleMessage();
             yield return null;
         }
 
-        if( TimeLeft <= 0f )
+        if ( TimeLeft <= 0f )
         {
             RuleFailed();
         }

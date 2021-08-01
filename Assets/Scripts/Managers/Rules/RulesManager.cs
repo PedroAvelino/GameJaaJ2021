@@ -10,6 +10,11 @@ public class RulesManager : MonoBehaviour
 
     public static Action<Rule> OnNewRuleGiven;
 
+    private void Awake()
+    {
+        _currentRule = null;
+    }
+
     private void OnEnable()
     {
         RuleTypeBase.OnRuleCompleted += GetNewRule;

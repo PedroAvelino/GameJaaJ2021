@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using MyBox;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,22 +10,24 @@ public class GameManager : MonoBehaviour
     [SerializeField] float _TimeBetweenRounds =  2f;
 
 
-    IEnumerator currentRoutine;
+    IEnumerator timerRoutine;
 
     private void OnEnable()
     {
         RulesManager.OnNewRuleGiven += StartRoundTimer;
+        RuleTypeBase.OnRuleCompleted += ResetRoutine;
     }
 
-    private void Awake()
+    private void ResetRoutine()
     {
-        currentRoutine = StartTimerRoutine();
+        timerRoutine = null;
+        timerRoutine = StartTimerRoutine();
     }
 
     private void StartRoundTimer( Rule r )
     {
-        StopCoroutine( currentRoutine );
-        StartCoroutine( currentRoutine );
+        ResetRoutine();
+        StartCoroutine(timerRoutine);
     }
 
     IEnumerator StartTimerRoutine()
@@ -43,5 +46,6 @@ public class GameManager : MonoBehaviour
     private void OnDisable()
     {
         RulesManager.OnNewRuleGiven -= StartRoundTimer;
+        RuleTypeBase.OnRuleCompleted -= ResetRoutine;
     }
 }
