@@ -33,8 +33,17 @@ public abstract class RuleTypeBase : MonoBehaviour
     {
         RulesManager.OnNewRuleGiven += CheckIfIsTargetRule;
         Enemy.OnEnemyDeath += OnEnemyDeath;
-        //Enemy.OnEnemyCaptured += OnEnemyDeath;
+        Dot.OnDeath += StopEverything;
         GameManager.OnStartRule += StartRule;
+    }
+
+    private void StopEverything()
+    {
+        if( currentRoutine != null )
+        {
+            StopCoroutine(currentRoutine);
+        }
+        RulesText.instance.GetTextToDisplay("Lmao");
     }
 
     private void Awake()
@@ -42,7 +51,7 @@ public abstract class RuleTypeBase : MonoBehaviour
         OnAwake();
     }
 
-    protected void OnAwake()
+    protected virtual void OnAwake()
     {
         currentRoutine = StartTimerRoutine();
     }
@@ -65,6 +74,7 @@ public abstract class RuleTypeBase : MonoBehaviour
         RulesManager.OnNewRuleGiven -= CheckIfIsTargetRule;
         Enemy.OnEnemyDeath -= OnEnemyDeath;
         GameManager.OnStartRule -= StartRule;
+        Dot.OnDeath -= StopEverything;
     }
 
     protected virtual void RuleFailed()

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8620151269872102486}
   - component: {fileID: 8620151269872102487}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Eye_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8620151270710974408}
   - component: {fileID: 8620151270710974409}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 3522774253994346962}
   - component: {fileID: 4706903359321251333}
   - component: {fileID: 4741674910940266665}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Dunban
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,7 +223,6 @@ MonoBehaviour:
   _speed: 2
   Type: 3
   destination: {fileID: 0}
-  _deathSound: {fileID: 0}
 --- !u!82 &4741674910940266665
 AudioSource:
   m_ObjectHideFlags: 0
@@ -330,7 +329,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8620151270776846433}
   - component: {fileID: 8620151270776846438}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -412,7 +411,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8620151271119201993}
   - component: {fileID: 8620151271119201998}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Eye_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -494,7 +493,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8620151271329589322}
   - component: {fileID: 8620151271329589323}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}

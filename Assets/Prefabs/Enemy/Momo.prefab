@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6652006067725432091}
   - component: {fileID: 1985494483476940622}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Eye_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1968481406629203797}
   - component: {fileID: 3836814119843758154}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,7 +146,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2667323505562636227}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BodyPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2967302662474815648}
   - component: {fileID: 1140604466596045233}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -259,7 +259,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6213871565103092800}
   - component: {fileID: 7997092977556587256}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Eyebrow_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -344,7 +344,7 @@ GameObject:
   - component: {fileID: 2693632141947307832}
   - component: {fileID: 5697731763976061556}
   - component: {fileID: 366460905831596998}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Momo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -524,7 +524,7 @@ GameObject:
   m_Component:
   - component: {fileID: 598130797848914033}
   - component: {fileID: 4933377043493340235}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}

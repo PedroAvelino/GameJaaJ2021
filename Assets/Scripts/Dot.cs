@@ -115,6 +115,9 @@ public class Dot : MonoBehaviour
     private void Death()
     {
         OnDeath?.Invoke();
+        AudioManager.instance.Play("playerDeath");
+        AudioManager.instance.Stop("theme");
+        AudioManager.instance.Play("gameover");
     }
 
     private void Update()

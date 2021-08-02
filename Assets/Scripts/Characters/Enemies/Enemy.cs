@@ -28,14 +28,18 @@ public abstract class Enemy : PoolableObject
 
     void MoveToDestination()
     {
-        Vector2 dir = (destination.transform.position - transform.position).normalized;
-        _rb.velocity = dir * _speed;
-
+        
         float distance = Vector2.Distance( transform.position, destination.transform.position );
         if( distance < 0.1f )
         {
             ReturnToPool();
-        } 
+        }
+        else
+        {
+            Vector2 dir = (destination.transform.position - transform.position).normalized;
+            _rb.velocity = dir * _speed;
+
+        }
     }
     public virtual void Death()
     {

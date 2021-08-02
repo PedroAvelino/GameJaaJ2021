@@ -16,6 +16,7 @@ public class AudioManager : MonoBehaviour
         if(instance == null )
         {
             instance = this;
+            DontDestroyOnLoad(this);
         }
         else
         {
@@ -53,7 +54,7 @@ public class AudioManager : MonoBehaviour
     {
         Sound s = Array.Find(_sounds, sound => sound.Name == soundName);
         if (s == null) return;
-
+        if (s.Source == null) return;
         s.Source.Stop();
     }
 }

@@ -6,7 +6,7 @@ using System.Collections;
 //This also deals with spawners lmao my bad
 public class EnemyManager : MonoBehaviour
 {
-    const int TOTAL_ACTIVE_SPAWNERS = 3;
+    const int TOTAL_ACTIVE_SPAWNERS = 4;
 
     [Separator("Enemies Lol")]
 
@@ -20,7 +20,7 @@ public class EnemyManager : MonoBehaviour
     List<Enemy> _allEnemiesSpawned;
 
     [Separator("Round Parameters")]
-    [SerializeField] float _spawnInterval = 1f;
+    [SerializeField] float _spawnInterval = .6f;
 
     [Separator("Spawners")]
 
@@ -36,6 +36,7 @@ public class EnemyManager : MonoBehaviour
     {
         RulesManager.OnNewRuleGiven += PrepareRound;
         GameManager.OnStartRule += StartSpawning;
+        Dot.OnDeath += StopEverything;
         RuleTypeBase.OnRuleCompleted += CollectEnemies;
 
     }
@@ -206,7 +207,14 @@ public class EnemyManager : MonoBehaviour
         RulesManager.OnNewRuleGiven -= PrepareRound;
         GameManager.OnStartRule -= StartSpawning;
         RuleTypeBase.OnRuleCompleted -= CollectEnemies;
+        Dot.OnDeath -= StopEverything;
 
         Pooler.ClearPool();
+    }
+
+    private void StopEverything()
+    {
+        ClearAllEnemies();
+        StopCoroutine(currentRoutine);
     }
 }

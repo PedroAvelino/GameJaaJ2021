@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1516301108539310910}
   - component: {fileID: 1516301108539310911}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: -85485264536910800}
   - component: {fileID: 8992962526901531102}
   - component: {fileID: 4781338169789567427}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Paulinho
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -275,7 +275,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1516301109894312531}
   - component: {fileID: 1516301109894312540}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Eye_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -357,7 +357,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1516301109935655966}
   - component: {fileID: 1516301109935655967}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Eye_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -439,7 +439,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1516301110038021362}
   - component: {fileID: 1516301110038021363}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -521,7 +521,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1516301110273142280}
   - component: {fileID: 1516301110273142281}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

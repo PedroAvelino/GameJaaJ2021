@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -1737117407587428455}
   - component: {fileID: 6895144475098477642}
   - component: {fileID: 4731777340131805538}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ezio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -193,7 +193,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2742668769966250591}
   - component: {fileID: 2742668769966250590}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -275,7 +275,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2742668770172896082}
   - component: {fileID: 2742668770172896081}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -357,7 +357,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2742668771494482051}
   - component: {fileID: 2742668771494482050}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -410,7 +410,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2742668771659348288}
   - component: {fileID: 2742668771659348295}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}

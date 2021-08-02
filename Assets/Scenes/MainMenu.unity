@@ -229,6 +229,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8821259754116115564, guid: 6d2459df3faed5d4a8f9e70cad0541aa, type: 3}
   m_PrefabInstance: {fileID: 123597073}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &123597075 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8821259754116115567, guid: 6d2459df3faed5d4a8f9e70cad0541aa, type: 3}
+  m_PrefabInstance: {fileID: 123597073}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &235381501
 GameObject:
   m_ObjectHideFlags: 0
@@ -428,10 +433,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "\"Voce est\xE1 preso em um ciclo eterno de sofrimento!\nObede\xE7a as
-    ordens do Cramunh\xE3o ou sua alma est\xE1 perdida!\u201D\n\nRegras do Jogo:\nCaptura
-    - Toque nos inimigos\nDestrui\xE7\xE3o - D\xEA um Dash nos inimigos\nSobreviv\xEAncia
-    - N\xE3o deixe os inimigos te tocarem\nCapture o ponto - Permane\xE7a dentro
-    do c\xEDrculo"
+    ordens do Cramunh\xE3o ou sua alma est\xE1 perdida!\u201D\n\nRegras do Jogo:\nDestrui\xE7\xE3o
+    - D\xEA um Dash nos inimigos\nSobreviv\xEAncia - N\xE3o deixe os inimigos te
+    tocarem\nCapture o ponto - Permane\xE7a dentro do c\xEDrculo"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 91ba4afd640665d4a881e47272a2359e, type: 2}
   m_sharedMaterial: {fileID: 3459304466206338810, guid: 91ba4afd640665d4a881e47272a2359e, type: 2}
@@ -590,7 +594,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 617772121}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 909090827}
+        m_TargetAssemblyTypeName: CanvasController, Assembly-CSharp
+        m_MethodName: LoadCredits
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &617772121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -880,6 +896,7 @@ GameObject:
   - component: {fileID: 909090826}
   - component: {fileID: 909090825}
   - component: {fileID: 909090824}
+  - component: {fileID: 909090827}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -952,6 +969,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &909090827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 909090823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 559fa089604fd3d489347746d337d3fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundAnimator: {fileID: 123597075}
+  tryAgainAnimator: {fileID: 0}
+  sceneLoadDelay: 0
 --- !u!1 &1068274722
 GameObject:
   m_ObjectHideFlags: 0
@@ -1273,6 +1305,34 @@ PrefabInstance:
     - target: {fileID: 4639774030542264993, guid: e17f212d6825b18418c67eb63cd03b58, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4639774030542264998, guid: e17f212d6825b18418c67eb63cd03b58, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4639774030542264998, guid: e17f212d6825b18418c67eb63cd03b58, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4639774030542264998, guid: e17f212d6825b18418c67eb63cd03b58, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 909090827}
+    - target: {fileID: 4639774030542264998, guid: e17f212d6825b18418c67eb63cd03b58, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4639774030542264998, guid: e17f212d6825b18418c67eb63cd03b58, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 4639774030542264998, guid: e17f212d6825b18418c67eb63cd03b58, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CanvasController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4639774030542264998, guid: e17f212d6825b18418c67eb63cd03b58, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e17f212d6825b18418c67eb63cd03b58, type: 3}

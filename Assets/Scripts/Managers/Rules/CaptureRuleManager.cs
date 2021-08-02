@@ -18,8 +18,9 @@ public class CaptureRuleManager : RuleTypeBase
     [ReadOnly] public CapturePoint _featuredCapturePoint;
 
 
-    private void Awake()
+    protected override void OnAwake()
     {
+        base.OnAwake();
         GetAllCapturePoints();
     }
 
@@ -45,7 +46,10 @@ public class CaptureRuleManager : RuleTypeBase
 
         if (isTimed)
         {
-            StopCoroutine(currentRoutine);
+            if( currentRoutine != null )
+            {
+                StopCoroutine(currentRoutine);
+            }
             StartCoroutine(currentRoutine);
         }
     }
@@ -76,11 +80,11 @@ public class CaptureRuleManager : RuleTypeBase
         string message = "";
         if( isTimed )
         {
-            message = $"Capture o ponto em {TimeLeft.ToString("F0")}";
+            message = $"Capture o ponto em {TimeLeft.ToString("F0")} sem atacar.";
         }
         else
         {
-            message = $"Capture o ponto";
+            message = $"Capture o ponto sem atacar.";
         }
         if (RulesText.instance == null) return;
 
@@ -94,7 +98,7 @@ public class CaptureRuleManager : RuleTypeBase
         if( complete )
         {
             _featuredCapturePoint.ResetCapturePoint();
-            OnRuleCompleted?.Invoke();
+            RuleCompleted();
             ResetManager();
         }
     }
@@ -115,15 +119,15 @@ public class CaptureRuleManager : RuleTypeBase
 
     protected override void ResetManager()
     {
+        complete = false;
         TimeLeft = 0;
         _featuredCapturePoint = null;
         isTimed = false;
         IsActive = false;
-        complete = false;
     }
 
     protected override void OnEnemyDeath(Enemy enemy)
     {
-       
+        RuleFailed();
     }
 }

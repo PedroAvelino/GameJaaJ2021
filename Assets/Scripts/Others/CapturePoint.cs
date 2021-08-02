@@ -78,6 +78,8 @@ public class CapturePoint : MonoBehaviour
     {
         currentFill = 0f;
         isComplete = false;
+        isFilling = false;
+        IsActive = false;
         _sr.color = _startColor;
         gameObject.SetActive(false);
     }

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4020781409744398214}
   - component: {fileID: 3862584181387332464}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Eyebrow_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7773394421679829761}
   - component: {fileID: 5150046446447666307}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Eye_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,7 +174,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3831558814492305219}
   - component: {fileID: 5802914855872948207}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -229,7 +229,7 @@ GameObject:
   m_Component:
   - component: {fileID: 641935231947856383}
   - component: {fileID: 5636731911589686076}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -314,7 +314,7 @@ GameObject:
   - component: {fileID: 6869684621147635648}
   - component: {fileID: 7484825835369638575}
   - component: {fileID: 1621322497628890410}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Seu Armando
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -504,7 +504,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3331369752628416700}
   - component: {fileID: 650105063664041453}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Eye_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -586,7 +586,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8662175917280649096}
   - component: {fileID: 7013029201056399476}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Eyebrow_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}

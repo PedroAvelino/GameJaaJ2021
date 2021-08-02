@@ -6,7 +6,7 @@ public class SurviveRuleManager : RuleTypeBase
     protected override void BuildRuleMessage()
     {
         string message = "";
-        message = $"Sobreviva por {TimeLeft.ToString("F0")}";
+        message = $"Sobreviva por {TimeLeft.ToString("F0")} sem atacar.";
         if (RulesText.instance == null) return;
 
         RulesText.instance.GetTextToDisplay(message);
@@ -35,12 +35,15 @@ public class SurviveRuleManager : RuleTypeBase
 
     protected override void OnEnemyDeath(Enemy enemy)
     {
-        
+        RuleFailed();
     }
 
     protected override void ResetManager()
     {
-       
+        TimeLeft = 0;
+        isTimed = false;
+        IsActive = false;
+        complete = false;
     }
 
     protected override void StartRule()
@@ -49,7 +52,10 @@ public class SurviveRuleManager : RuleTypeBase
 
         if (isTimed)
         {
-            StopCoroutine(currentRoutine);
+            if (currentRoutine != null)
+            {
+                StopCoroutine(currentRoutine);
+            }
             StartCoroutine(currentRoutine);
         }
     }

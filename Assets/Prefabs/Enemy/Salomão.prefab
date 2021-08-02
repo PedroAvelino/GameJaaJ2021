@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6078129254348202276}
   - component: {fileID: 6078129254348202279}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Eyebrow_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6078129254800488216}
   - component: {fileID: 6078129254800488219}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Eye_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: -2473313723804153748}
   - component: {fileID: 7733068921781137559}
   - component: {fileID: 2032479517682787002}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: "Salom\xE3o"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -357,7 +357,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6078129255950282551}
   - component: {fileID: 6078129255950282550}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Eyebrow_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -439,7 +439,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6078129256212964215}
   - component: {fileID: 6078129256212964214}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -495,7 +495,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6078129256218274841}
   - component: {fileID: 6078129256218274840}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -577,7 +577,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6078129256332889587}
   - component: {fileID: 6078129256332889586}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Eye_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -659,7 +659,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6078129256382931387}
   - component: {fileID: 6078129256382931386}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}

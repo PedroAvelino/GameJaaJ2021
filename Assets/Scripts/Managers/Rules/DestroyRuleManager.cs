@@ -35,7 +35,10 @@ public class DestroyRuleManager : RuleTypeBase
 
         if (isTimed)
         {
-            StopCoroutine( currentRoutine );
+            if (currentRoutine != null)
+            {
+                StopCoroutine(currentRoutine);
+            }
             StartCoroutine( currentRoutine );
         }
     }

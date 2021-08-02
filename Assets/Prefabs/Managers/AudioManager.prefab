@@ -98,3 +98,12 @@ MonoBehaviour:
     RandomPitch: 0
     RangedPitchMin: 0.1
     RangedPitchMax: 3
+  - Name: button
+    clip: {fileID: 8300000, guid: 38db95fc6e27f9945a712cb070b56042, type: 3}
+    Source: {fileID: 0}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    RandomPitch: 0
+    RangedPitchMin: 0.1
+    RangedPitchMax: 3
