@@ -80,6 +80,8 @@ public abstract class RuleTypeBase : MonoBehaviour
     {
 
         if (IsActive == false) return;
+
+        AudioManager.instance.Play("winRound");
         
         complete = true;
 

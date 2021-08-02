@@ -39,6 +39,9 @@ public abstract class Enemy : PoolableObject
     }
     public virtual void Death()
     {
+        //Tava sem tempo aqui lol
+        AudioManager.instance.Play("enemy_death");
+
         OnEnemyDeath?.Invoke( this );
         ReturnToPool();
     }
