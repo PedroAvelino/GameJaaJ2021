@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEditor;
 using UnityEngine;
 using MyBox;
+using System;
 
 [RequireComponent(typeof(Player))]
 public class Dot : MonoBehaviour
@@ -24,6 +25,10 @@ public class Dot : MonoBehaviour
 
     [AutoProperty] [SerializeField]
     AudioSource _dashSound;
+
+    [SerializeField] CanvasController canvasController;
+
+    public static Action OnDeath;
 
 #if UNITY_EDITOR
     private void OnValidate()
@@ -106,8 +111,17 @@ public class Dot : MonoBehaviour
         }
     }
 
+    [ContextMenu("Death")]
     private void Death()
     {
-        
+        OnDeath?.Invoke();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown( KeyCode.J ))
+        {
+            Death();
+        }
     }
 }
