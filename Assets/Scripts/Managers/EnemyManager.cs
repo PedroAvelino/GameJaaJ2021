@@ -37,6 +37,7 @@ public class EnemyManager : MonoBehaviour
         RulesManager.OnNewRuleGiven += PrepareRound;
         GameManager.OnStartRule += StartSpawning;
         Dot.OnDeath += StopEverything;
+        RuleTypeBase.OnRuleFailed += StopEverything;
         RuleTypeBase.OnRuleCompleted += CollectEnemies;
 
     }
@@ -208,6 +209,7 @@ public class EnemyManager : MonoBehaviour
         GameManager.OnStartRule -= StartSpawning;
         RuleTypeBase.OnRuleCompleted -= CollectEnemies;
         Dot.OnDeath -= StopEverything;
+        RuleTypeBase.OnRuleFailed -= StopEverything;
 
         Pooler.ClearPool();
     }

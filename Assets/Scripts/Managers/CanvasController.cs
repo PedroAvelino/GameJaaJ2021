@@ -35,12 +35,12 @@ public class CanvasController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.F) && isPlayerDead)
         {
             Time.timeScale = 1f;
-            StartCoroutine(LoadScene(0));
+            StartCoroutine(LoadScene(1));
         }
         else if(Input.GetKeyDown(KeyCode.R) && isPlayerDead)
         {
             Time.timeScale = 1f;
-            StartCoroutine(LoadScene(1));
+            StartCoroutine(LoadScene(0));
         }
     }
 
@@ -73,7 +73,10 @@ public class CanvasController : MonoBehaviour
     [ContextMenu("Try")]
     public void SetTryAgain()
     {
-        tryAgainAnimator.SetTrigger("Fade In");
+        if( tryAgainAnimator != null )
+        {
+            tryAgainAnimator.SetTrigger("Fade In");
+        }
         isPlayerDead = true;
         Time.timeScale = 0.25f;
     }
@@ -85,7 +88,7 @@ public class CanvasController : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     public void LoadCredits()

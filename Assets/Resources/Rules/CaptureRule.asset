@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2a2f04055f18b7449bebedffc6c8237, type: 3}
   m_Name: CaptureRule
   m_EditorClassIdentifier: 
-  Type: 2
+  Type: 1
   IsTimed: 0
   RuleTime: 0
   AmountOfEnemiesToSpawn: 0
-  TargetEnemy: 2
+  TargetEnemy: 0

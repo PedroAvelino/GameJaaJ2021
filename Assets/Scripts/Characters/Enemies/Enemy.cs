@@ -13,7 +13,6 @@ public abstract class Enemy : PoolableObject
     public Transform destination;
 
     Rigidbody2D _rb;
-
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();

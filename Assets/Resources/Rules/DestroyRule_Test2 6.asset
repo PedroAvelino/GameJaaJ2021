@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2a2f04055f18b7449bebedffc6c8237, type: 3}
-  m_Name: DestroyRule_Armando_15
+  m_Script: {fileID: 11500000, guid: 0ae0369fe7d4e01428413d3579a2b340, type: 3}
+  m_Name: DestroyRule_Test2 6
   m_EditorClassIdentifier: 
   Type: 1
   IsTimed: 1
-  RuleTime: 15
-  AmountOfEnemiesToSpawn: 4
-  TargetEnemy: 2
+  RuleTime: 12
+  AmountOfEnemiesToSpawn: 3
+  TargetEnemy: 5

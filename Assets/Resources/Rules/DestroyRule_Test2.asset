@@ -16,4 +16,4 @@ MonoBehaviour:
   IsTimed: 1
   RuleTime: 20
   AmountOfEnemiesToSpawn: 3
-  TargetEnemy: 2
+  TargetEnemy: 3

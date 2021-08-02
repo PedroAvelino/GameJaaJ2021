@@ -83,6 +83,7 @@ public abstract class RuleTypeBase : MonoBehaviour
         OnRuleFailed?.Invoke(  );
 
         print("Failed");
+        StopEverything();
         ResetManager();
     }
 
@@ -93,9 +94,9 @@ public abstract class RuleTypeBase : MonoBehaviour
 
         AudioManager.instance.Play("winRound");
         
-        complete = true;
-
         StopCoroutine(currentRoutine);
+        currentRoutine = null;
+        currentRoutine = StartTimerRoutine();
 
         OnRuleCompleted?.Invoke(  );
     }

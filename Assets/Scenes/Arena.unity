@@ -618,7 +618,7 @@ MonoBehaviour:
   _startColor: {r: 1, g: 1, b: 1, a: 0.39607844}
   _endColor: {r: 0, g: 1, b: 0, a: 1}
   _fillMaximum: 100
-  _fillSpeed: 10
+  _fillSpeed: 14
   IsActive: 0
   isComplete: 0
   currentFill: 0
@@ -759,7 +759,7 @@ MonoBehaviour:
   _startColor: {r: 1, g: 1, b: 1, a: 0.39607844}
   _endColor: {r: 0, g: 1, b: 0, a: 1}
   _fillMaximum: 100
-  _fillSpeed: 10
+  _fillSpeed: 14
   IsActive: 0
   isComplete: 0
   currentFill: 0
@@ -977,7 +977,7 @@ MonoBehaviour:
   _startColor: {r: 1, g: 1, b: 1, a: 0.39607844}
   _endColor: {r: 0, g: 1, b: 0, a: 1}
   _fillMaximum: 100
-  _fillSpeed: 10
+  _fillSpeed: 14
   IsActive: 0
   isComplete: 0
   currentFill: 0
@@ -1057,7 +1057,7 @@ MonoBehaviour:
   _startColor: {r: 1, g: 1, b: 1, a: 0.39607844}
   _endColor: {r: 0, g: 1, b: 0, a: 1}
   _fillMaximum: 100
-  _fillSpeed: 10
+  _fillSpeed: 14
   IsActive: 0
   isComplete: 0
   currentFill: 0
@@ -1587,7 +1587,7 @@ MonoBehaviour:
   _startColor: {r: 1, g: 1, b: 1, a: 0.39607844}
   _endColor: {r: 0, g: 1, b: 0, a: 1}
   _fillMaximum: 100
-  _fillSpeed: 10
+  _fillSpeed: 14
   IsActive: 0
   isComplete: 0
   currentFill: 0

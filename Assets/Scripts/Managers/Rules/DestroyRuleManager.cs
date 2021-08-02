@@ -1,4 +1,5 @@
 using MyBox;
+using System;
 using UnityEngine;
 
 //Deals with rules of the type destroy
@@ -73,18 +74,49 @@ public class DestroyRuleManager : RuleTypeBase
     {
         string message = "";
 
+        string enemyName = GetEnemyName();
         if ( isTimed )
         {
-            message = $"Destrua {AmountOfEnemiesToDestroy} de {TargetEnemy} em {TimeLeft.ToString("F0")}";
+            message = $"Destrua {AmountOfEnemiesToDestroy} {enemyName} em {TimeLeft.ToString("F0")}";
         }
         else
         {
-            message = $"Destrua {AmountOfEnemiesToDestroy} de {TargetEnemy}";
+            message = $"Destrua {AmountOfEnemiesToDestroy} {enemyName}";
         }
 
         if(RulesText.instance == null) return;
 
         RulesText.instance.GetTextToDisplay( message );
+    }
+
+    private string GetEnemyName()
+    {
+        switch (TargetEnemy)
+        {
+            case EnemyType.Any:
+                return "Todos";
+
+            case EnemyType.Momo:
+                return "Triangulos";
+
+            case EnemyType.Armando:
+                return "Quadrados";
+
+            case EnemyType.Dunban:
+                return "Circulos";
+
+            case EnemyType.Paulinho:
+                return "Pentagonos";
+
+            case EnemyType.Ezio:
+                return "Hexagonos";
+
+            case EnemyType.Salomao:
+                return "Estrelas";
+
+        }
+
+        return "Todos";
     }
 
     protected  override void CheckClearCondition()

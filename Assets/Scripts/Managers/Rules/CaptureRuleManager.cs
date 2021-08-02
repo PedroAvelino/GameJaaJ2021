@@ -1,4 +1,5 @@
 ﻿using MyBox;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -101,6 +102,11 @@ public class CaptureRuleManager : RuleTypeBase
             RuleCompleted();
             ResetManager();
         }
+    }
+
+    protected override IEnumerator StartTimerRoutine()
+    {
+        return base.StartTimerRoutine();
     }
 
     void GetAllCapturePoints()
