@@ -11,7 +11,7 @@ public class Sound
     [HideInInspector]
     public AudioSource Source;
 
-    [Range(0f, 1f)]
+    [Range(0f, 5f)]
     public float Volume;
 
     [Range(.1f, 3f)]

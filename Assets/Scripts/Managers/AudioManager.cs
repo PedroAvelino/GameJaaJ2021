@@ -26,6 +26,7 @@ public class AudioManager : MonoBehaviour
         foreach (var s in _sounds)
         {
             s.Source = gameObject.AddComponent<AudioSource>();
+            s.Source.playOnAwake = false;
             s.Source.clip = s.clip;
 
             s.Source.volume = s.Volume;
@@ -36,7 +37,7 @@ public class AudioManager : MonoBehaviour
 
     public void Play(string soundName )
     {
-        Sound s = Array.Find(_sounds, sound => sound.Name == name);
+        Sound s = Array.Find(_sounds, sound => sound.Name == soundName);
         if (s == null) return;
 
         if( s.RandomPitch )
@@ -50,7 +51,7 @@ public class AudioManager : MonoBehaviour
 
     public void Stop(string soundName )
     {
-        Sound s = Array.Find(_sounds, sound => sound.Name == name);
+        Sound s = Array.Find(_sounds, sound => sound.Name == soundName);
         if (s == null) return;
 
         s.Source.Stop();

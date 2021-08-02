@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1568754816898869401
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1568754816898869403}
+  - component: {fileID: 1568754816898869400}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1568754816898869403
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568754816898869401}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1568754816898869400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568754816898869401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bedda385ae28d9745b1ac3447a90da3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sounds:
+  - Name: enemy_death
+    clip: {fileID: 8300000, guid: c67673df00c66b5488134b4534faf811, type: 3}
+    Source: {fileID: 0}
+    Volume: 5
+    Pitch: 0.1
+    Loop: 0
+    RandomPitch: 1
+    RangedPitchMin: 0.1
+    RangedPitchMax: 3
+  - Name: theme
+    clip: {fileID: 8300000, guid: 7a7e465f21d431c4f8b51ef4c6817ccd, type: 3}
+    Source: {fileID: 0}
+    Volume: 1
+    Pitch: 1
+    Loop: 1
+    RandomPitch: 0
+    RangedPitchMin: 0.1
+    RangedPitchMax: 3
+  - Name: gameover
+    clip: {fileID: 8300000, guid: 1fa0afa7ba1867d49811754ad31a76c0, type: 3}
+    Source: {fileID: 0}
+    Volume: 1
+    Pitch: 1
+    Loop: 1
+    RandomPitch: 0
+    RangedPitchMin: 0.1
+    RangedPitchMax: 3
+  - Name: credits
+    clip: {fileID: 8300000, guid: 9ef0c22e857e022429a64179dc73672b, type: 3}
+    Source: {fileID: 0}
+    Volume: 1
+    Pitch: 1
+    Loop: 1
+    RandomPitch: 0
+    RangedPitchMin: 0.1
+    RangedPitchMax: 3
+  - Name: playerDeath
+    clip: {fileID: 8300000, guid: 6a99228804b7f794bb4d8eab84772cce, type: 3}
+    Source: {fileID: 0}
+    Volume: 0.639
+    Pitch: 1
+    Loop: 0
+    RandomPitch: 1
+    RangedPitchMin: 0.1
+    RangedPitchMax: 3
+  - Name: winRound
+    clip: {fileID: 8300000, guid: 85965f0439277a6489d0965282f20cdc, type: 3}
+    Source: {fileID: 0}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    RandomPitch: 0
+    RangedPitchMin: 0.1
+    RangedPitchMax: 3

@@ -41,6 +41,7 @@ public abstract class Enemy : PoolableObject
     {
         //Tava sem tempo aqui lol
         AudioManager.instance.Play("enemy_death");
+        MainCamera.instance.ReceiveStress();
 
         OnEnemyDeath?.Invoke( this );
         ReturnToPool();
