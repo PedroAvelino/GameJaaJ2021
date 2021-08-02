@@ -428,7 +428,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "\"Voce est\xE1 preso em um ciclo eterno de sofrimento!\nObede\xE7a as
-    ordens do Cramunh\xE3o ou sua alma est\xE1 perdida!\u201D"
+    ordens do Cramunh\xE3o ou sua alma est\xE1 perdida!\u201D\n\nRegras do Jogo:\nCaptura
+    - Toque nos inimigos\nDestrui\xE7\xE3o - D\xEA um Dash nos inimigos\nSobreviv\xEAncia
+    - N\xE3o deixe os inimigos te tocarem\nCapture o ponto - Permane\xE7a dentro
+    do c\xEDrculo"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 91ba4afd640665d4a881e47272a2359e, type: 2}
   m_sharedMaterial: {fileID: 3459304466206338810, guid: 91ba4afd640665d4a881e47272a2359e, type: 2}

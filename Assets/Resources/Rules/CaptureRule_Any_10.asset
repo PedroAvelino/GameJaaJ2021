@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d2a2f04055f18b7449bebedffc6c8237, type: 3}
-  m_Name: CaptureRule_10
+  m_Name: CaptureRule_Any_10
   m_EditorClassIdentifier: 
   Type: 1
   IsTimed: 1

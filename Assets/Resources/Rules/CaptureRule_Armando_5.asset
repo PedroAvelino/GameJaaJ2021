@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d2a2f04055f18b7449bebedffc6c8237, type: 3}
-  m_Name: CaptureRule_Dunban_5
+  m_Name: CaptureRule_Armando_5
   m_EditorClassIdentifier: 
   Type: 1
   IsTimed: 1
   RuleTime: 5
   AmountOfEnemiesToSpawn: 1
-  TargetEnemy: 3
+  TargetEnemy: 2

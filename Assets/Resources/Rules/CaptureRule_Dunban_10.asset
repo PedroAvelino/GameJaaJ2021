@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 1
   IsTimed: 1
-  RuleTime: 5
-  AmountOfEnemiesToSpawn: 1
+  RuleTime: 10
+  AmountOfEnemiesToSpawn: 2
   TargetEnemy: 3
